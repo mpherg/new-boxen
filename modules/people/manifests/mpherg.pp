@@ -73,9 +73,16 @@ class people::mpherg {
     'gpg',
     'maven',
     'python3',
-    'tree'
+    'tree',
     ]:
     ensure => 'present'
+  }
+
+  package { [
+      'eclipse-java',
+    ]:
+    ensure => present,
+    provider => 'brewcask',
   }
 
   # Make sure our python site-packages refers to boxen
