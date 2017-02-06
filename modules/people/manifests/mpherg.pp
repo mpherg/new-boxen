@@ -78,7 +78,9 @@ class people::mpherg {
     ensure => 'present'
   }
 
+  # Caskroom packages
   package { [
+      'aerial',
       'eclipse-java',
     ]:
     ensure => present,
