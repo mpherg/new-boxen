@@ -6,15 +6,6 @@ class people::mpherg {
     source  => 'mpherg/dotfiles'
   }
 
-  include atom
-  atom::package { [
-    'linter',
-    'linter-clang',
-    'you-complete-me',
-    'vim-mode-plus'
-    ]:
-  }
-
   include arduino
   include cmake
   include chrome
