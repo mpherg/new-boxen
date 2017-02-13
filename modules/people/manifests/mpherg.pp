@@ -105,6 +105,15 @@ class people::mpherg {
     provider => 'brewcask',
   }
 
+  # Python packages
+  package { [
+    'neovim',
+    ]:
+    ensure   => present,
+    provider => 'pip',
+    require  => File["${home}/Library/Python/2.7/site-packages/homebrew.pth"],
+  }
+
   # Make sure our python site-packages refers to boxen
   file { [
     "${home}/Library",
