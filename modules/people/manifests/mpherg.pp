@@ -122,15 +122,15 @@ class people::mpherg {
   }
 
   # GNU Radio package (without jack support)
-  homebrew::tap { 'mpherg/tap': }
-  package { 'mpherg/tap/gnuradio':
-    ensure          => 'present',
-    install_options => [
-      '--with-documentation',
-      '--without-jack',
-    ],
-    require         => File["${home}/Library/Python/2.7/site-packages/homebrew.pth"],
-  }
+  #  homebrew::tap { 'mpherg/tap': }
+  #  package { 'mpherg/tap/gnuradio':
+  #    ensure          => 'present',
+  #    install_options => [
+  #      '--with-documentation',
+  #      '--without-jack',
+  #    ],
+  #    require         => File["${home}/Library/Python/2.7/site-packages/homebrew.pth"],
+  #  }
 
   ruby_gem { 'bundler for all rubies':
     gem          => 'bundler',
