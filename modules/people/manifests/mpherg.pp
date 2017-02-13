@@ -2,7 +2,7 @@ class people::mpherg {
   $home     = "/Users/${::boxen_user}"
   $dotfiles = "${home}/.dotfiles"
 
-  repository { $dotfiles:
+  repository { "${dotfiles}":
     source  => 'mpherg/dotfiles'
   }
 
@@ -48,10 +48,37 @@ class people::mpherg {
   include zsh
 
   # Atlassian SDK development
-  homebrew::tap { 'atlassian/tap': }
+  homebrew::tap { [
+    'atlassian/tap',
+    'neovim/neovim'
+    ]:
+    ensure => 'present'
+  }
+
   package { 'atlassian/tap/atlassian-plugin-sdk':
     ensure  => present,
     require => Homebrew::Tap['atlassian/tap']
+  }
+
+  # Neovim
+  package { 'neovim/neovim/neovim':
+    ensure  => present,
+    require => Homebrew::Tap['neovim/neovim']
+  }
+
+  # Neovim requires .vim/.vimrc to be in a separate location
+  file { "${home}/.config":
+    ensure => 'directory',
+  }
+  file { "${home}/.config/nvim":
+    ensure  => 'link',
+    target  => "${home}/.vim",
+    require => [ File["${home}/.config"], Repository["${dotfiles}"] ],
+  }
+  file { "${home}/.config/nvim/init.vim":
+    ensure => 'link',
+    target => "${home}/.vimrc",
+    require => [ File["${home}/.config"], Repository["${dotfiles}"] ],
   }
 
   # Various homebrew packages
