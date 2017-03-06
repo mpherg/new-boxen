@@ -90,6 +90,7 @@ class people::mpherg {
     'eigen',
     'gpg',
     'maven',
+    'pv',
     'python3',
     'tree',
     ]:
