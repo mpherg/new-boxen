@@ -94,6 +94,7 @@ class people::mpherg {
     'pv',
     'python3',
     'tree',
+    'watch',
     ]:
     ensure => 'present'
   }
