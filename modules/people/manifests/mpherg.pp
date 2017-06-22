@@ -89,6 +89,7 @@ class people::mpherg {
     'dos2unix',
     'eigen',
     'gpg',
+    'jq',
     'maven',
     'pv',
     'python3',
