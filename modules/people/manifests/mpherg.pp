@@ -16,9 +16,8 @@ class people::mpherg {
   include iterm2::colors::solarized_light
   include iterm2::colors::solarized_dark
 
-  include java
   include kubectl
-  include mactex::full
+#  include mactex::full
   include macvim
   include ohmyzsh
   include xquartz
@@ -103,6 +102,7 @@ class people::mpherg {
   package { [
       'aerial',
       'eclipse-java',
+      'java',
     ]:
     ensure => present,
     provider => 'brewcask',
