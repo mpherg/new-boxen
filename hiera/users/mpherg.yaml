@@ -1,4 +1,4 @@
-arduino::version:         '1.6.7'
+arduino::version:         '1.8.3'
 docker::ensure:           'absent'
 dropbox::version:         '3.12.6'
 handbrake::version:       '0.10.2'
