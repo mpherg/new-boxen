@@ -49,7 +49,9 @@ class people::mpherg {
   # Atlassian SDK development
   homebrew::tap { [
     'atlassian/tap',
-    'neovim/neovim'
+    'neovim/neovim',
+    'loopperfect/lp',
+    'facebook/fb',
     ]:
     ensure => 'present'
   }
@@ -63,6 +65,12 @@ class people::mpherg {
   package { 'neovim/neovim/neovim':
     ensure  => present,
     require => Homebrew::Tap['neovim/neovim']
+  }
+
+  # Buckaroo
+  package { 'loopperfect/lp/buckaroo':
+    ensure  => present,
+    require => Homebrew::Tap['loopperfect/lp']
   }
 
   # Neovim requires .vim/.vimrc to be in a separate location
