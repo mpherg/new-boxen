@@ -110,6 +110,7 @@ class people::mpherg {
   package { [
       'aerial',
       'eclipse-java',
+      'intellij-idea',
       'java',
     ]:
     ensure => present,
