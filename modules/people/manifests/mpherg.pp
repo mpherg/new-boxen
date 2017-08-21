@@ -17,7 +17,7 @@ class people::mpherg {
   include iterm2::colors::solarized_dark
 
   include kubectl
-#  include mactex::full
+  #  include mactex::full
   include macvim
   include ohmyzsh
   include xquartz
@@ -98,6 +98,7 @@ class people::mpherg {
     'gpg',
     'jq',
     'maven',
+    'pinentry-mac',
     'pv',
     'python3',
     'tree',
