@@ -101,6 +101,7 @@ class people::mpherg {
     'pinentry-mac',
     'pv',
     'python3',
+    'reattach-to-user-namespace',
     'tree',
     'watch',
     ]:
