@@ -76,6 +76,7 @@ class people::mpherg {
     'eigen',
     'gpg',
     'groovy',
+    'httpie',
     'jq',
     'maven',
     'pinentry-mac',
