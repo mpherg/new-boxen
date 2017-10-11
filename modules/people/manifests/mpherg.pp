@@ -49,7 +49,6 @@ class people::mpherg {
   # Atlassian SDK development
   homebrew::tap { [
     'atlassian/tap',
-    'neovim/neovim',
     'loopperfect/lp',
     'facebook/fb',
     ]:
@@ -61,31 +60,11 @@ class people::mpherg {
     require => Homebrew::Tap['atlassian/tap']
   }
 
-  # Neovim
-  package { 'neovim/neovim/neovim':
-    ensure  => present,
-    require => Homebrew::Tap['neovim/neovim']
-  }
 
   # Buckaroo
   package { 'loopperfect/lp/buckaroo':
     ensure  => present,
     require => Homebrew::Tap['loopperfect/lp']
-  }
-
-  # Neovim requires .vim/.vimrc to be in a separate location
-  file { "${home}/.config":
-    ensure => 'directory',
-  }
-  file { "${home}/.config/nvim":
-    ensure  => 'link',
-    target  => "${home}/.vim",
-    require => [ File["${home}/.config"], Repository["${dotfiles}"] ],
-  }
-  file { "${home}/.config/nvim/init.vim":
-    ensure => 'link',
-    target => "${home}/.vimrc",
-    require => [ File["${home}/.config"], Repository["${dotfiles}"] ],
   }
 
   # Various homebrew packages
@@ -117,15 +96,6 @@ class people::mpherg {
     ]:
     ensure => present,
     provider => 'brewcask',
-  }
-
-  # Python packages
-  package { [
-    'neovim',
-    ]:
-    ensure   => present,
-    provider => 'pip',
-    require  => File["${home}/Library/Python/2.7/site-packages/homebrew.pth"],
   }
 
   # Make sure our python site-packages refers to boxen
