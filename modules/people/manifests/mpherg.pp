@@ -75,6 +75,7 @@ class people::mpherg {
     'dos2unix',
     'eigen',
     'gpg',
+    'groovy',
     'jq',
     'maven',
     'pinentry-mac',
