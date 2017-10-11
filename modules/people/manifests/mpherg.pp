@@ -93,6 +93,7 @@ class people::mpherg {
   package { [
       'aerial',
       'eclipse-java',
+      'gimp',
       'intellij-idea',
       'java',
     ]:
