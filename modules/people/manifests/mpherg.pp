@@ -72,6 +72,7 @@ class people::mpherg {
     'boost',
     'clang-format',
     'conan',
+    'dep',
     'dos2unix',
     'eigen',
     'gpg',
