@@ -80,6 +80,7 @@ class people::mpherg {
     'httpie',
     'jq',
     'maven',
+    'ninja',
     'pinentry-mac',
     'pv',
     'python3',
