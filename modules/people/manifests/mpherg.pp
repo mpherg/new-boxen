@@ -98,6 +98,7 @@ class people::mpherg {
       'gimp',
       'intellij-idea',
       'java',
+      'visual-studio-code',
     ]:
     ensure => present,
     provider => 'brewcask',
