@@ -78,6 +78,7 @@ class people::mpherg {
     'gpg',
     'groovy',
     'httpie',
+    'jsoncpp',
     'jq',
     'maven',
     'ninja',
